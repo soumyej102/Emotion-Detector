@@ -1,0 +1,85 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Brigid</title>
+    <link rel="icon" href="{{url_for('static',filename = 'logo.JPG')}}" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=poppins"> 
+    <link rel="stylesheet" href='D:\\web_technologies\\project\\static\\styles.css'> 
+    
+    <style>      
+      .topnav a:hover {
+        background-color:skyblue;
+        color: white;
+        size: 25px;
+        font-family: poppins;
+        border-radius: 125px;
+      }
+
+      @media screen and (max-width: 600px) { 
+        .topnav a {
+          float: none;
+          width: 100%;
+        }
+      }
+    
+      #IMG{
+        top:2%;
+        right: 2%;
+      }
+
+      #BODY{
+        background: url('static/smile.jfif');
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      #click1{
+        size: 200px;
+        font-size: large;
+        margin-left: 25%;    
+        margin-top: 100px;
+      }
+      
+      #FIELDSET1{
+        font-size: 150px;
+        font-family: poppins;
+        border-radius: 150px;
+        border: solid;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body id="BODY">
+      <image src="{{url_for('static',filename = 'logo.JPG')}}" id="IMG" ></image>
+      <div class="topnav">
+        <a id="CONTACT" href="/contact_us" target="_blank" style="float:right;font-size: 150px;text-decoration:none;color: white;font-family: poppins;">&nbsp;&nbsp;Contact us&nbsp;&nbsp;</a>
+        <a id="PROJECTS" href="#" style="float:right;font-size:150px;text-decoration:underline;color: white;font-family:poppins;font-weight:bold;"><i>&nbsp;&nbsp;Projects&nbsp;&nbsp;</i></a>
+        <a id="HOME" href="\" style="float:right;font-size: 150px;text-decoration:none;color: white; font-family: poppins;">&nbsp;&nbsp;Home&nbsp;&nbsp;</a>
+      
+      </div>
+      </br>
+
+      <fieldset id="FIELDSET1">
+        <legend style="font-size: 150px;"> Brigid </legend>
+        <ul>
+          <li><p style="font-family: poppins;font-size: 125px;">
+          Click on the button below and you can try our project and test it yourself!</p></li>
+          <li><p style="font-family: poppins;font-size: 125px;">
+          Once the button is clicked there will be an icon on the taskbar. Click on that.</p></li>
+          <li><p style="font-family: poppins;font-size: 125px;">
+          As soon as it opens ,make the expression and click q. </p></li>
+          <li><p style="font-family: poppins;font-size: 125px;">
+            Wait for a few seconds and the output is shown with the ratio of expressions you have on your face.</p></li>
+        </ul>
+      </fieldset>
+
+      <form action="/project_pg" method="POST">
+        <input type="submit" placeholder="CLICK" name="CLICK" value="CLICK ME!" id="click1" style="width: 500px ;height: 300px;background-color: turquoise;font-size: 50px;font-weight: bold;color:red;align-self: center;";/>
+      </form>
+    </body>
+</html>
+{% endblock %}
